@@ -1,3 +1,4 @@
+use crate::ammunition::Ammunition;
 use crate::barrel::Barrel;
 use crate::scope::Scope;
 use crate::stripe::Stripe;
@@ -32,5 +33,14 @@ impl Weapon {
         }
 
         return true;
+    }
+
+    pub fn unload(&mut self){
+       self.stripe.set_amount(&0);
+        
+    }
+    
+    pub fn reload(&mut self, ammo: &mut Ammunition){
+        self.stripe.load_from_amo(ammo);
     }
 }
