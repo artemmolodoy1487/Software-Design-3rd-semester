@@ -9,3 +9,12 @@ struct Weapon {
     scope: Scope,
     name: String,
 }
+
+impl Weapon {
+    
+    pub fn new(name: String, stripe: Stripe, barrel: Barrel, scope: Scope) -> Self {
+        Weapon { name, stripe, barrel, scope }
+    }
+
+    
+}
