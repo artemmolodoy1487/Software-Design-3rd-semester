@@ -16,5 +16,10 @@ impl Weapon {
         Weapon { name, stripe, barrel, scope }
     }
 
-    
+    pub fn fire(&mut self){
+        if self.stripe.amount() == 0 {
+            return
+        }
+        
+    }
 }
