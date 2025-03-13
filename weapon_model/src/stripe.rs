@@ -7,7 +7,7 @@ pub struct Stripe{
 }
 
 impl Stripe{
-    pub fn new(bullet_type: &str, max_amount: u32, amount: u32, ) -> Self {
+    pub fn new(bullet_type: &str, max_amount: u32, amount: u32) -> Self {
         Stripe {
             bullet_type: bullet_type.to_string(),
             max_amount,
