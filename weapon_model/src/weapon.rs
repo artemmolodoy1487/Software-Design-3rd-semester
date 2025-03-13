@@ -1,25 +1,36 @@
-use crate::stripe::Stripe;
 use crate::barrel::Barrel;
 use crate::scope::Scope;
+use crate::stripe::Stripe;
+use crate::triger::Triger;
 
 #[derive(Debug)]
-struct Weapon {
+pub struct Weapon {
     stripe: Stripe,
     barrel: Barrel,
     scope: Scope,
+    triger: Triger,
     name: String,
 }
 
 impl Weapon {
-    
-    pub fn new(name: String, stripe: Stripe, barrel: Barrel, scope: Scope) -> Self {
-        Weapon { name, stripe, barrel, scope }
+    pub fn new(name: String, stripe: Stripe, barrel: Barrel, scope: Scope, triger: Triger) -> Self {
+        Weapon {
+            name,
+            stripe,
+            barrel,
+            scope,
+            triger,
+        }
     }
 
-    pub fn fire(&mut self){
-        if self.stripe.amount() == 0 {
-            return
+    pub fn fire(&mut self) -> bool {
+        if !self.triger.is_active() {
+            return false;
         }
-        
+        if !self.stripe.use_bullet() {
+            return false;
+        }
+
+        return true;
     }
 }

@@ -6,7 +6,10 @@ pub struct Ammunition {
 
 impl Ammunition {
     pub fn new(bullet_type: &str, bullet_amount: u32) -> Self {
-        println!("Создание новой амуниции: тип - {}, количество - {}", bullet_type, bullet_amount);
+        println!(
+            "Создание новой амуниции: тип - {}, количество - {}",
+            bullet_type, bullet_amount
+        );
         Ammunition {
             bullet_type: bullet_type.to_string(),
             bullet_amount,

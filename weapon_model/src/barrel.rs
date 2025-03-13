@@ -6,9 +6,7 @@ pub struct Barrel {
 impl Barrel {
     pub fn new() -> Self {
         println!("Создание нового ствола: чистый");
-        Barrel {
-            is_clean: true,
-        }
+        Barrel { is_clean: true }
     }
 
     pub fn is_clean(&self) -> &bool {
